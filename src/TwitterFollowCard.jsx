@@ -1,15 +1,21 @@
+import { useState } from 'react'
 import './TwitterFollowCard.css'
 
-const followButton = ({followed}) => {
-    return(
-        followed? <button className='followed'>Followed</button>:
-        <button className='follow'>Follow</button>
-    )
-}
-
-
-
 export default function TwitterFollowCard({children, formato, profileName, nickname='unknown', profilePhoto, isFollowed}) {
+
+    const [isFollowing,setIsFollowing] = useState(isFollowed)
+
+    const handleClick = () => {
+        setIsFollowing(!isFollowing)
+    }
+    
+    const followButton = ({followed}) => {
+        return(
+            followed? <button className='followed' onClick={handleClick}>Followed</button>:
+            <button className='follow' onClick={handleClick}>Follow</button>
+        )
+    }
+
     return (
         <article>
             <header>
@@ -21,7 +27,7 @@ export default function TwitterFollowCard({children, formato, profileName, nickn
             </div>
             </header>
             <aside>
-                {followButton({followed: isFollowed})}
+                {followButton({followed: isFollowing})}
             </aside>
         </article>
     )

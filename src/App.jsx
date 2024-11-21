@@ -10,6 +10,8 @@ const formatedUserNames = ({nickname}) => {
     )
 }
 
+const newUser = {formato: formatedUserNames, profilePhoto:'/RN.jpg', nickname:'flaquito', isFollowed:false}
+
 export default function App() {
 
     return (
@@ -28,16 +30,24 @@ export default function App() {
         isFollowed={true}/> */}
 
         <TwitterFollowCard formato={formatedUserNames} profilePhoto={'/RN.jpg'} nickname={"choquito"}
-        profileName={'Huascar Aaron'}
-        isFollowed={false}/>
+        isFollowed={false}>
+        Huascar Aaron
+        </TwitterFollowCard>
 
-        <TwitterFollowCard formato={formatedUserNames} profilePhoto={'/RN.jpg'} nickname={"chefcoder"}
-        profileName={'Mr chef coder baker'}
-        isFollowed={true}/>
+        <TwitterFollowCard formato={formatedUserNames} profilePhoto={'/RN.jpg'} nickname={"donCamaron"}
+        isFollowed={true}>
+        Don Camaron
+        </TwitterFollowCard>
 
-        <TwitterFollowCard formato={formatedUserNames} profilePhoto={'/RN.jpg'} nickname={"donDimadon"}
-        profileName={'Don dimadon dueño del domodin de Dynsdale'}
-        isFollowed={true}/>
+        <TwitterFollowCard formato={formatedUserNames} profilePhoto={'/RN.jpg'}
+        isFollowed={false}>
+        Perry el Ornitorinco
+        </TwitterFollowCard>
+        
+        <TwitterFollowCard {...newUser}>
+        el flaquito malo
+        </TwitterFollowCard>
+
         </section>
     </>
   )

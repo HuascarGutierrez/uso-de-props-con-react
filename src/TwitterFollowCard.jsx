@@ -9,13 +9,13 @@ const followButton = ({followed}) => {
 
 
 
-export default function TwitterFollowCard({formato, profileName, nickname, profilePhoto, isFollowed}) {
+export default function TwitterFollowCard({children, formato, profileName, nickname='unknown', profilePhoto, isFollowed}) {
     return (
         <article>
             <header>
             <img src={profilePhoto} alt="profile photo" />
             <div>
-                <strong>{profileName}</strong>
+                <strong>{children}</strong>
                 {/**<span>{funcion(nickname)}</span> */}
                 {formato(nickname={nickname})}
             </div>

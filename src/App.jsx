@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import TwitterFollowCard from './TwitterFollowCard'
 import './App.css'
 
@@ -13,6 +13,13 @@ const formatedUserNames = ({nickname}) => {
 const newUser = {formato: formatedUserNames, profilePhoto:'/RN.jpg', nickname:'flaquito', isFollowed:false}
 
 export default function App() {
+
+    const changeName = () => {
+        setData(data +1);
+        console.log(data);
+    }
+
+    const [data, setData] = useState(0);
 
     return (
     <>
@@ -47,8 +54,9 @@ export default function App() {
         <TwitterFollowCard {...newUser}>
         el flaquito malo
         </TwitterFollowCard>
-
         </section>
+
+        <button onClick={changeName}>cambio de nombre</button>
     </>
   )
 }

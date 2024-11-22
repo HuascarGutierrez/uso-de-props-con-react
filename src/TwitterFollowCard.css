@@ -45,7 +45,7 @@ aside button{
 }
 
 aside button:hover{
-    background-color: rgb(27, 27, 74);
+    background-color: rgb(39, 39, 105);
     color: #bbb;
-    transition: .5s ease background-color;
+    transition: .3s ease background-color;
 }
